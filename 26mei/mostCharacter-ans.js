@@ -71,4 +71,10 @@ for (let k = 0; k < dir.length; k++) {
     }
 }
 
-console.log(result, char);
+// console.log(result, char);
+
+
+
+
+
+
