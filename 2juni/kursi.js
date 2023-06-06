@@ -2,43 +2,41 @@ let soal = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
 let penumpang = ["j", "k", "l", "m", "n"]
 
 function bus(utama, baris, tambahan) {
-    let arr = [];
+    
+    let result = [];
     let temp = [];
-
 
     for (let i = 0; i < utama.length; i++) {
         temp.push(utama[i])
         if (temp.length == baris) {
-            arr.push(temp)
-            temp = []
+            result.push(temp)
+            temp = [];
         }
     }
     for (let j = 0; j < tambahan; j++) {
-        const element = penumpang[j];
-        temp.push(element);
+        temp.push(penumpang[j])
         if (temp.length == baris) {
-            arr.push(temp)
-            temp = []
+            result.push(temp)
+            temp = [];
         }
     }
     if (temp.length !== 0){
         let sisa = baris - temp.length;
         for (let k = 0; k < sisa; k++) {
-            temp.push("X");
+            temp.push(' ');
         }
-        arr.push(temp);
+        result.push(temp);
     }
-
-    return arr;
+    return result;
 }
 
-let result = bus(soal, 6, 0)
+let result = bus(soal, 3, 2)
 console.log(result);
 /**
  * output = [
  *  [ "a", "b", "c"],
  * [ "d", "e", "f"],
  * [ "g", "h", "i"],
- * ["j", "X", "X"]
+ * ["j", "X", " "]
  * ]
  */
